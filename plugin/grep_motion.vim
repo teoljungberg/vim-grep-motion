@@ -3,10 +3,6 @@ if !exists("g:grep_motion_no_maps")
   xnoremap <silent> gr :<C-U>call <SID>GrepMotion(visualmode())<CR>
 endif
 
-if !exists("g:grep_motion_prg")
-  let g:grep_motion_prg = "grep"
-endif
-
 function! s:CopyMotionForType(type)
   if a:type ==# 'v'
     silent execute "normal! `<" . a:type . "`>y"
@@ -20,7 +16,7 @@ function! s:GrepMotion(type) abort
 
   call s:CopyMotionForType(a:type)
 
-  execute "" . g:grep_motion_prg . " " . shellescape(@@)
+  execute ":grep" . " " . shellescape(@@)
 
   let @@ = reg_save
 endfunction

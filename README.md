@@ -12,16 +12,6 @@ you want to grep for.
 ## Visual mode
 Visually select the pattern you want to grep for, type `gr`.
 
-## Change program
-This plugin defaults to `:grep`, if you want to use i.e [`:Ack`], you can
-configure it be used like so:
-
-```viml
-let g:grep_motion_prg = ":Ack"
-```
-
-[:Ack]: https://github.com/mileszs/ack.vim
-
 ## Mappings
 The mapping `gr` is set in both normal and visual-mode, if you want to remove it
 to set your own mappings you set `g:grep_no_maps` in your `.vimrc`
