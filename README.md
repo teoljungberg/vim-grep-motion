@@ -13,13 +13,13 @@ you want to grep for.
 Visually select the pattern you want to grep for, type `gr`.
 
 ## Mappings
-The mapping `gr` is set in both normal and visual-mode, if you want to remove it
-to set your own mappings you set `g:grep_no_maps` in your `.vimrc`
+The mapping `gr` is set in both normal and visual-mode, but will adhere to any
+custom mapping you have configured. If you want to remove it to set your own
+mappings you set `g:grep_no_maps` in your `.vimrc`
 
 If you want to use `qq` instead of `gr`:
 
 ```viml
-let g:grep_motion_no_maps = 1
 nnoremap <silent> qq :set opfunc=<SID>GrepMotion<CR>g@
 xnoremap <silent> qq :<C-U>call <SID>GrepMotion(visualmode())<CR>
 ```
