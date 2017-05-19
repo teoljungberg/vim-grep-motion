@@ -5,24 +5,22 @@ Grep for text objects. Works with pretty much everything, including:
 w, W, e, E, b, B, t*, f*, i*, a*, and custom text objects
 ```
 
+## :grep
+`gr` will populate the quickfix list using `:grep`.
+
+## :lgrep
+`gl` will populate the location list using `:lgrep`.
+
 ## Normal mode
-Place your cursor somewhere, type `gr` and, then perform a text-object for what
-you want to grep for.
+Place your cursor somewhere, type `gr` or `gl` and, then perform a text-object
+for what you want to grep for.
 
 ## Visual mode
-Visually select the pattern you want to grep for, type `gr`.
+Visually select the pattern you want to grep for, type `gr` or `gl`.
 
 ## Mappings
-The mapping `gr` is set in both normal and visual-mode, but will adhere to any
-custom mapping you have configured. If you want to remove it to set your own
-mappings you set `g:grep_no_maps` in your `.vimrc`
-
-If you want to use `qq` instead of `gr`:
-
-```viml
-nnoremap <silent> qq :set opfunc=<SID>GrepMotion<CR>g@
-xnoremap <silent> qq :<C-U>call <SID>GrepMotion(visualmode())<CR>
-```
+The mappings `gr` and `gl` are set in both normal and visual-mode, but will
+adhere to any custom mapping you have configured.
 
 ## License
 
